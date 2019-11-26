@@ -1,49 +1,14 @@
-@font-face {
-	font-family: "Open Sans";
-	src: url('../font/OpenSans-Regular.ttf');
-	font-weight: 400;
-	font-style: normal;
-}
-
-
-html, body {
-	box-sizing: border-box;
-}
+@charset "UTF-8";
+@import 'fonts.css';
 
 body {
-	padding: 0 100px;
-	font-family: "Open Sans", "Arial", sans-serif;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "Open Sans", Arial, sans-serif;
 }
 
-nav ul {
-	list-style: none;
-}
-
-nav ul li {
-	display: inline-block;
-	padding: 15px;
-	cursor: pointer;
-}
-
-header, footer {
-	background-color: #252525;
-	color: white; 
-}
-
-div.text-wrapper {
+section {
+	padding: 50px 150px;
 	text-align: justify;
-	color: #000000;
-}
-
-div.text-wrapper > p {
-	color: blue;
-}
-
-.img-wrapper img {
-	width: 350px;
-}
-
-aside {
-	border: 1px solid rgb(55, 55, 55);
-
 }

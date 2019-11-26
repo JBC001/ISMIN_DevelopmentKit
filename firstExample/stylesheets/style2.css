@@ -1,0 +1,43 @@
+@import "fonts.css";
+
+html, body {
+	box-sizing: border-box;
+}
+
+body {
+	padding: 0 100px;
+	font-family: "Open Sans", "Arial", sans-serif;
+}
+
+nav ul {
+	list-style: none;
+}
+
+nav ul li {
+	display: inline-block;
+	padding: 15px;
+	cursor: pointer;
+}
+
+header, footer {
+	background-color: #252525;
+	color: white; 
+}
+
+div.text-wrapper {
+	text-align: justify;
+	color: #000000;
+}
+
+div.text-wrapper > p {
+	color: blue;
+}
+
+.img-wrapper img {
+	width: 350px;
+}
+
+aside {
+	border: 1px solid rgb(55, 55, 55);
+
+}
