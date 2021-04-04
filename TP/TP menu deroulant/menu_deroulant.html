@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>PAGE 2</title>
+	<noscript>Your browser doesn't support JavaScript or you have disabled it. Please turn it on for a better experience.</noscript>
+	<!--[if lt IE 9]>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script>alert('Please upgrade your browser version');</script>
+	<![endif]-->
+	<style type="text/css">
+		/* On enlève les marges par défaut sur certains navigateurs */
+		html, body {
+			box-sizing: border-box;
+			font-family: Segoe UI, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		/*
+			-  le header est fixé en haut de la page
+			-  Le flexbox sert seulement à centrer le menu au milieu du header
+		*/
+
+		header {
+			background-color: #424242;
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			color: #fff;
+			z-index: 20;
+		}
+
+		nav ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		/* On retire la couleur bleue dégueu des liens par défaut et on met les liens en inline-block */
+
+		nav a {
+			color: inherit;
+			margin: 0;
+			text-decoration: none;
+			display: inline-block;
+		}
+
+		/* 
+			-  La position relative permet de bien placer le sous-menu par la suite
+			-  Il y a une animation sur la couleur de fond lors du survol de la souris
+		*/
+
+		li.item {
+			display: inline-block;
+			position: relative;
+			margin: 0;
+			background-color: transparent;
+			z-index: 50;
+
+			transition: background-color 350ms ease;
+		}
+
+		li.item > a {
+			padding: 28px 48px;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+		}
+
+		/* Le sous menu est en absolu */
+
+		ul.sublist {
+			position: absolute;
+			max-height: 0;
+			overflow: hidden;
+			background-color: #404040;
+			min-width: 100%;
+			z-index: -1;
+
+			transition: all 350ms ease;
+		}
+
+		li.subitem {
+			margin: 0;
+			background: transparent;
+			transition: background-color 350ms ease;
+		}
+
+		li.subitem a {
+			padding: 12px 20px;
+		}
+
+		li.item:hover {
+			background-color: #ec1a0b;
+		}
+
+		/* Apparition du sous-menu lors du survol de la souris */
+		/* 
+		Il existe de très nombreuses possibilités pour cacher et afficher les menus dans un menu déroulant en utilisant différentes propriétés : 
+			-  Ici, j'utilise la hauteur maximum comme propriété
+			-  On peut utiliser la propriété top (car le sous menu est en absolu)
+			-  La propriété transform: scaleY(); peut être utilisée
+			-  On peut simplement utiliser display si on ne veut pas d'animation
+			-  On peut utiliser la width
+			-  ...
+		*/
+
+		li.item:hover ul.sublist {
+			max-height: 300px;
+		}
+
+		li.subitem:hover {
+			background-color: #ec1a0b;
+		}
+
+	</style>
+</head>
+
+<body>
+<header>
+	<nav>
+		<ul>
+			<li class="item"><a href="#">Item 1</a></li>
+			<li class="item">
+				<a href="#">Item 2</a>
+				<ul class="sublist">
+					<li class="subitem"><a href="#">Sub-item 1</a></li>
+					<li class="subitem"><a href="#">Sub-item 2</a></li>
+					<li class="subitem"><a href="#">Sub-item 3</a></li>
+					<li class="subitem"><a href="#">Sub-item 4</a></li>
+				</ul>
+			</li>
+			<li class="item">
+				<a href="#">Item 3</a>
+				<ul class="sublist">
+					<li class="subitem"><a href="#">Sub-item 1</a></li>
+					<li class="subitem"><a href="#">Sub-item 2</a></li>
+				</ul>
+			</li>
+			<li class="item"><a href="#">Item 4</a></li>
+			<li class="item"><a href="#">Item 5</a></li>
+		</ul>
+	</nav>
+</header>
+</body>
+
+</html>
